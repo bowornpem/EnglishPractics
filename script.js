@@ -474,6 +474,107 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ========================================
+// Share Website Function
+// ========================================
+async function shareWebsite() {
+    const shareData = {
+        title: 'ตารางฝึกภาษาอังกฤษแบบเข้มข้น 12 สัปดาห์',
+        text: 'โปรแกรมฝึกภาษาอังกฤษแบบเข้มข้น 12 สัปดาห์ ครอบคลุมทักษะทั้ง 4 ด้าน ฟรี!',
+        url: 'https://bowornpem.github.io/EnglishPractics/'
+    };
+
+    try {
+        if (navigator.share) {
+            await navigator.share(shareData);
+            showNotification('✅ แชร์สำเร็จแล้ว!');
+        } else {
+            // Fallback: Copy to clipboard
+            await navigator.clipboard.writeText(shareData.url);
+            showNotification('📋 คัดลอกลิงก์แล้ว!\n' + shareData.url);
+        }
+    } catch (err) {
+        if (err.name !== 'AbortError') {
+            console.error('Share failed:', err);
+            // Fallback: Copy to clipboard
+            try {
+                await navigator.clipboard.writeText(shareData.url);
+                showNotification('📋 คัดลอกลิงก์แล้ว!\n' + shareData.url);
+            } catch (clipboardErr) {
+                showNotification('❌ ไม่สามารถแชร์ได้');
+            }
+        }
+    }
+}
+
+// ========================================
+// Handle Import File Function
+// ========================================
+function handleImportFile(file) {
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const data = JSON.parse(e.target.result);
+
+            // Validate data structure
+            if (!data || typeof data !== 'object') {
+                throw new Error('Invalid data format');
+            }
+
+            // Import data
+            if (data.checklist) {
+                localStorage.setItem('checklistState', JSON.stringify(data.checklist));
+            }
+            if (data.progress) {
+                localStorage.setItem('progressData', JSON.stringify(data.progress));
+            }
+            if (data.currentSection) {
+                localStorage.setItem('currentSection', data.currentSection);
+            }
+            if (data.currentWeek) {
+                localStorage.setItem('currentWeek', data.currentWeek);
+            }
+            if (data.checklistDate) {
+                localStorage.setItem('checklistDate', data.checklistDate);
+            }
+
+            showNotification('✅ นำเข้าข้อมูลสำเร็จ!\nกำลังโหลดหน้าใหม่...');
+            setTimeout(() => location.reload(), 1500);
+        } catch (error) {
+            console.error('Import error:', error);
+            showNotification('❌ ไฟล์ไม่ถูกต้อง!\nกรุณาเลือกไฟล์ backup ที่ถูกต้อง');
+        }
+    };
+
+    reader.onerror = () => {
+        showNotification('❌ ไม่สามารถอ่านไฟล์ได้');
+    };
+
+    reader.readAsText(file);
+}
+
+// ========================================
+// Install PWA Prompt
+// ========================================
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+
+    // Show install notification after 10 seconds
+    setTimeout(() => {
+        showNotification('💡 ติดตั้งแอปนี้บนอุปกรณ์ของคุณได้!\nคลิกที่ปุ่ม "ติดตั้ง" ในเบราว์เซอร์');
+    }, 10000);
+});
+
+window.addEventListener('appinstalled', () => {
+    showNotification('✅ ติดตั้งแอปสำเร็จ!\nตอนนี้คุณสามารถใช้งานแบบออฟไลน์ได้');
+    deferredPrompt = null;
+});
+
+// ========================================
 // Expose Functions to Global Scope
 // ========================================
 window.resetChecklist = resetChecklist;
@@ -483,3 +584,5 @@ window.exportData = exportData;
 window.importData = importData;
 window.toggleDarkMode = toggleDarkMode;
 window.calculateStats = calculateStats;
+window.shareWebsite = shareWebsite;
+window.handleImportFile = handleImportFile;

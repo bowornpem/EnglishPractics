@@ -4,7 +4,12 @@
       "Read(//Users/bowornpb/Desktop/**)",
       "Bash(open:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Read(//Users/bowornpb/Library/Containers/com.aptonic.Dropzone4/Data/Library/Application Support/Dropzone/Promised Files/DzFilePromise-577BB3E0-BBA0-48E0-B1A2-4BD4F9274A61/**)"
     ],
     "deny": [],
     "ask": []

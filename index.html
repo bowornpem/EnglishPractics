@@ -3,13 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ตารางฝึกภาษาอังกฤษแบบเข้มข้น 12 สัปดาห์</title>
+
+    <!-- Title & Description -->
+    <title>ตารางฝึกภาษาอังกฤษแบบเข้มข้น 12 สัปดาห์ | English Practice Program</title>
+    <meta name="description" content="โปรแกรมฝึกภาษาอังกฤษแบบเข้มข้น 12 สัปดาห์ ครอบคลุมทักษะ Listening, Speaking, Reading, Writing พร้อมติดตามความก้าวหน้ารายวัน ฟรี!">
+    <meta name="keywords" content="เรียนภาษาอังกฤษ, English practice, ฝึกภาษาอังกฤษ, IELTS preparation, English learning schedule, study plan">
+    <meta name="author" content="English Practice Program">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bowornpem.github.io/EnglishPractics/">
+    <meta property="og:title" content="ตารางฝึกภาษาอังกฤษแบบเข้มข้น 12 สัปดาห์">
+    <meta property="og:description" content="โปรแกรมฝึกภาษาอังกฤษแบบเข้มข้น 12 สัปดาห์ ครอบคลุมทักษะทั้ง 4 ด้าน พร้อมติดตามความก้าวหน้า ฟรี 100%!">
+    <meta property="og:image" content="https://bowornpem.github.io/EnglishPractics/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bowornpem.github.io/EnglishPractics/">
+    <meta property="twitter:title" content="ตารางฝึกภาษาอังกฤษแบบเข้มข้น 12 สัปดาห์">
+    <meta property="twitter:description" content="โปรแกรมฝึกภาษาอังกฤษแบบเข้มข้น 12 สัปดาห์ ครอบคลุมทักษะทั้ง 4 ด้าน">
+    <meta property="twitter:image" content="https://bowornpem.github.io/EnglishPractics/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="English Practice">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🎯 ตารางฝึกภาษาอังกฤษแบบเข้มข้น 12 สัปดาห์</h1>
+            <div class="header-top">
+                <h1>🎯 ตารางฝึกภาษาอังกฤษแบบเข้มข้น 12 สัปดาห์</h1>
+                <div class="header-actions">
+                    <button class="icon-btn" onclick="toggleDarkMode()" title="เปิด/ปิด Dark Mode" aria-label="Toggle Dark Mode">
+                        <span class="icon">🌙</span>
+                    </button>
+                    <button class="icon-btn" onclick="exportData()" title="ส่งออกข้อมูล" aria-label="Export Data">
+                        <span class="icon">💾</span>
+                    </button>
+                    <button class="icon-btn" onclick="document.getElementById('import-file').click()" title="นำเข้าข้อมูล" aria-label="Import Data">
+                        <span class="icon">📂</span>
+                    </button>
+                    <button class="icon-btn" onclick="shareWebsite()" title="แชร์เว็บไซต์" aria-label="Share Website">
+                        <span class="icon">📤</span>
+                    </button>
+                </div>
+                <input type="file" id="import-file" accept=".json" style="display: none;" onchange="handleImportFile(this.files[0])">
+            </div>
             <div class="overview">
                 <div class="overview-item">
                     <span class="label">ระยะเวลา:</span>

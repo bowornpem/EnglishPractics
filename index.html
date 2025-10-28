@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตารางฝึกภาษาอังกฤษแบบเข้มข้น 12 สัปดาห์</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 ตารางฝึกภาษาอังกฤษแบบเข้มข้น 12 สัปดาห์</h1>
+            <div class="overview">
+                <div class="overview-item">
+                    <span class="label">ระยะเวลา:</span>
+                    <span class="value">12 สัปดาห์ (3 เดือน)</span>
+                </div>
+                <div class="overview-item">
+                    <span class="label">เวลาต่อวัน:</span>
+                    <span class="value">4 ชั่วโมง</span>
+                </div>
+                <div class="overview-item">
+                    <span class="label">วันฝึก:</span>
+                    <span class="value">6 วัน/สัปดาห์ (พักวันอาทิตย์)</span>
+                </div>
+                <div class="overview-item">
+                    <span class="label">โฟกัสหลัก:</span>
+                    <span class="value">Listening 35% | Speaking 35% | Reading 15% | Writing 15%</span>
+                </div>
+            </div>
+        </header>
+
+        <nav class="main-nav">
+            <button class="nav-btn active" data-section="overview">ภาพรวม</button>
+            <button class="nav-btn" data-section="phase1">Phase 1: Foundation</button>
+            <button class="nav-btn" data-section="phase2">Phase 2: Fluency</button>
+            <button class="nav-btn" data-section="phase3">Phase 3: Mastery</button>
+            <button class="nav-btn" data-section="tracker">ติดตามความก้าวหน้า</button>
+            <button class="nav-btn" data-section="resources">แหล่งข้อมูล</button>
+        </nav>
+
+        <main id="content">
+            <!-- Overview Section -->
+            <section id="overview" class="section active">
+                <h2>📅 ตารางเวลารายวัน (Overview)</h2>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>เวลา</th>
+                            <th>กิจกรรม</th>
+                            <th>ทักษะ</th>
+                            <th>ระยะเวลา</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>08:00-09:00</td>
+                            <td>🎧 Listening Practice</td>
+                            <td><span class="skill-badge listening">Listening</span></td>
+                            <td>60 นาที</td>
+                        </tr>
+                        <tr>
+                            <td>09:00-10:00</td>
+                            <td>🗣 Speaking Practice</td>
+                            <td><span class="skill-badge speaking">Speaking</span></td>
+                            <td>60 นาที</td>
+                        </tr>
+                        <tr>
+                            <td>14:00-15:00</td>
+                            <td>📖 Reading + Vocabulary</td>
+                            <td><span class="skill-badge reading">Reading</span></td>
+                            <td>60 นาที</td>
+                        </tr>
+                        <tr>
+                            <td>19:00-19:30</td>
+                            <td>✍️ Writing Practice</td>
+                            <td><span class="skill-badge writing">Writing</span></td>
+                            <td>30 นาที</td>
+                        </tr>
+                        <tr>
+                            <td>19:30-20:00</td>
+                            <td>📊 Review + Planning</td>
+                            <td><span class="skill-badge review">Review</span></td>
+                            <td>30 นาที</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="daily-checklist">
+                    <h3>📋 Checklist รายวัน</h3>
+                    <div class="checklist-items">
+                        <label class="checklist-item">
+                            <input type="checkbox" id="check-listening">
+                            <span>🎧 Listening Practice (60 นาที)</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" id="check-speaking">
+                            <span>🗣 Speaking Practice (60 นาที)</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" id="check-reading">
+                            <span>📖 Reading + Vocabulary (60 นาที)</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" id="check-writing">
+                            <span>✍️ Writing Practice (30 นาที)</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" id="check-review">
+                            <span>📊 Review + Anki (30 นาที)</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" id="check-recording">
+                            <span>💾 บันทึกเสียง/วิดีโอ</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" id="check-vocab">
+                            <span>📝 จดคำศัพท์ใหม่ (15-20 คำ)</span>
+                        </label>
+                    </div>
+                    <button class="reset-btn" onclick="resetChecklist()">รีเซ็ตวันใหม่</button>
+                </div>
+            </section>
+
+            <!-- Phase 1 Section -->
+            <section id="phase1" class="section">
+                <h2>🗓 PHASE 1: FOUNDATION (สัปดาห์ 1-4)</h2>
+
+                <div class="week-selector">
+                    <button class="week-btn active" data-week="1-2">สัปดาห์ 1-2</button>
+                    <button class="week-btn" data-week="3-4">สัปดาห์ 3-4</button>
+                </div>
+
+                <div id="week-1-2" class="week-content active">
+                    <h3>สัปดาห์ที่ 1-2: Building Basics</h3>
+
+                    <div class="time-block">
+                        <h4>08:00-09:00 | Listening Fundamentals</h4>
+                        <div class="activity-group">
+                            <h5>วันจันทร์-พุธ: Structured Listening</h5>
+                            <ul>
+                                <li><strong>0-15 นาที:</strong> ฟัง "6 Minute English BBC" 2 ตอน
+                                    <ul>
+                                        <li>ครั้งที่ 1: ฟังเฉยๆ เข้าใจภาพรวม</li>
+                                        <li>ครั้งที่ 2: จดคำศัพท์ที่ได้ยิน</li>
+                                        <li>ครั้งที่ 3: อ่าน transcript พร้อมฟัง</li>
+                                    </ul>
+                                </li>
+                                <li><strong>15-30 นาที:</strong> ฟัง "Easy English" channel บน YouTube
+                                    <ul>
+                                        <li>เลือกหัวข้อที่สนใจ (street interviews)</li>
+                                        <li>จดสำนวนที่ชอบ 3-5 ประโยค</li>
+                                    </ul>
+                                </li>
+                                <li><strong>30-45 นาที:</strong> แอป "ELSA Speak" - Listening exercises
+                                    <ul>
+                                        <li>ทำแบบฝึกหัด listening comprehension</li>
+                                        <li>ระดับ Beginner-Intermediate</li>
+                                    </ul>
+                                </li>
+                                <li><strong>45-60 นาที:</strong> Shadow Reading Practice
+                                    <ul>
+                                        <li>เลือกคลิปที่ชอบจากข้างต้น 1 คลิป</li>
+                                        <li>พูดตามทุกคำ ทันที ทันใจ</li>
+                                        <li>บันทึกเสียงตัวเอง เปรียบเทียบ</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <h5>วันพฤหัสบดี-เสาร์: Real-World Listening</h5>
+                            <ul>
+                                <li><strong>0-20 นาที:</strong> ฟังข่าว "BBC Learning English - News Review"
+                                    <ul>
+                                        <li>จดหัวข้อข่าวและคำศัพท์สำคัญ</li>
+                                    </ul>
+                                </li>
+                                <li><strong>20-40 นาที:</strong> ฟังพอดแคสต์ "The English We Speak"
+                                    <ul>
+                                        <li>เรียนสำนวนและการใช้จริง</li>
+                                    </ul>
+                                </li>
+                                <li><strong>40-60 นาที:</strong> ดูคลิป TED-Ed (5-10 นาที)
+                                    <ul>
+                                        <li>ฟัง 3 รอบ: ไม่มีซับ → ซับอังกฤษ → ไม่มีซับ</li>
+                                        <li>สรุปเนื้อหาด้วยคำพูดของตัวเอง</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="time-block">
+                        <h4>09:00-10:00 | Speaking Practice</h4>
+                        <div class="activity-group">
+                            <h5>ทุกวัน: Speaking Routine</h5>
+                            <ul>
+                                <li><strong>0-10 นาที:</strong> Warm-up
+                                    <ul>
+                                        <li>พูดคุยกับตัวเอง ภาษาอังกฤษ</li>
+                                        <li>"What am I going to do today?"</li>
+                                        <li>"How do I feel this morning?"</li>
+                                    </ul>
+                                </li>
+                                <li><strong>10-30 นาที:</strong> Shadowing + Recording
+                                    <ul>
+                                        <li>เลือกคลิป 2-3 นาที ที่ฟังเมื่อกี้</li>
+                                        <li>Shadow reading 3 รอบ</li>
+                                        <li>บันทึกเสียงตัวเอง อ่านคนเดียว</li>
+                                        <li>ฟังเปรียบเทียบ แก้ไข</li>
+                                    </ul>
+                                </li>
+                                <li><strong>30-50 นาที:</strong> Conversation Practice
+                                    <ul>
+                                        <li>จันทร์/พฤหัส: Cambly - Free talk 20 นาที</li>
+                                        <li>อังคาร/ศุกร์: HelloTalk - แชทเสียงกับเพื่อน</li>
+                                        <li>พุธ/เสาร์: ELSA Speak - Dialogue practice</li>
+                                    </ul>
+                                </li>
+                                <li><strong>50-60 นาที:</strong> Topic Speaking
+                                    <ul>
+                                        <li>สุ่มหัวข้อจาก "IELTS Speaking Topics"</li>
+                                        <li>ตั้งตัวจับเวลา 2 นาที พูดไม่หยุด</li>
+                                        <li>ทำ 3-4 หัวข้อ</li>
+                                        <li>บันทึกเสียงทุกครั้ง</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="time-block">
+                        <h4>14:00-15:00 | Reading + Vocabulary</h4>
+                        <div class="activity-group">
+                            <h5>วันจันทร์/พฤหัสบดี: Article Reading</h5>
+                            <ul>
+                                <li><strong>0-25 นาที:</strong> อ่านบทความ BBC News / The Guardian
+                                    <ul>
+                                        <li>เลือกหัวข้อที่สนใจ 1 บทความ</li>
+                                        <li>อ่าน 2 รอบ: รอบแรกเข้าใจภาพรวม, รอบสองดูรายละเอียด</li>
+                                        <li>Highlight คำศัพท์ใหม่ 10-15 คำ</li>
+                                    </ul>
+                                </li>
+                                <li><strong>25-45 นาที:</strong> Vocabulary Building
+                                    <ul>
+                                        <li>ค้นหาความหมายใน Cambridge Dictionary</li>
+                                        <li>จดตัวอย่างประโยคที่ใช้</li>
+                                        <li>ใส่ใน Anki app พร้อมตัวอย่าง</li>
+                                    </ul>
+                                </li>
+                                <li><strong>45-60 นาที:</strong> Read Aloud
+                                    <ul>
+                                        <li>อ่านออกเสียงย่อหน้าที่ชอบ 3-5 ย่อหน้า</li>
+                                        <li>บันทึกเสียง</li>
+                                        <li>ฟังตัวเอง แก้การออกเสียง</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <h5>วันอังคาร/ศุกร์: Story Reading</h5>
+                            <ul>
+                                <li><strong>0-30 นาที:</strong> อ่าน Graded Readers
+                                    <ul>
+                                        <li>สัปดาห์ 1-2: Level 2-3 (A2-B1)</li>
+                                        <li>เลือกเรื่องสนุกๆ อ่านเพลิน</li>
+                                        <li>อ่านเงียบ เข้าใจเนื้อเรื่อง</li>
+                                    </ul>
+                                </li>
+                                <li><strong>30-50 นาที:</strong> Vocabulary จากเรื่อง
+                                    <ul>
+                                        <li>จดคำศัพท์สำคัญ 8-10 คำ</li>
+                                        <li>ทำ flashcards</li>
+                                    </ul>
+                                </li>
+                                <li><strong>50-60 นาที:</strong> Retell the story
+                                    <ul>
+                                        <li>เล่าเรื่องด้วยคำพูดของตัวเอง</li>
+                                        <li>บันทึกเสียง</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <h5>วันพุธ/เสาร์: Fun Reading</h5>
+                            <ul>
+                                <li>อ่านตามความสนใจ:
+                                    <ul>
+                                        <li>คอมมิค (Marvel/DC comics)</li>
+                                        <li>บล็อก Medium ที่สนใจ</li>
+                                        <li>Instagram/Twitter posts เป็นภาษาอังกฤษ</li>
+                                    </ul>
+                                </li>
+                                <li>จดคำศัพท์ที่เจอ</li>
+                                <li>เน้นความสนุก ไม่เครียด</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="time-block">
+                        <h4>19:00-20:00 | Writing + Review</h4>
+                        <div class="activity-group">
+                            <h5>19:00-19:30 | Daily Writing</h5>
+                            <ul>
+                                <li><strong>จันทร์/พฤหัสบดี:</strong> Journal Writing
+                                    <ul>
+                                        <li>เขียน diary ภาษาอังกฤษ 150-200 คำ</li>
+                                        <li>เขียนเกี่ยวกับ: วันนี้ทำอะไร, รู้สึกอย่างไร, เรียนรู้อะไร</li>
+                                        <li>ใช้คำศัพท์ใหม่ที่เรียนวันนี้อย่างน้อย 5 คำ</li>
+                                    </ul>
+                                </li>
+                                <li><strong>อังคาร/ศุกร์:</strong> Summary Writing
+                                    <ul>
+                                        <li>สรุปสิ่งที่ฟัง/อ่านวันนี้ 100-150 คำ</li>
+                                        <li>เขียนความคิดเห็นของตัวเอง</li>
+                                    </ul>
+                                </li>
+                                <li><strong>พุธ/เสาร์:</strong> Creative Writing
+                                    <ul>
+                                        <li>เขียนเรื่องสั้นๆ สนุกๆ</li>
+                                        <li>หรือเขียน email ถึงเพื่อนจินตนาการ</li>
+                                        <li>ใช้จินตนาการ ฝึกแสดงออก</li>
+                                    </ul>
+                                </li>
+                                <li>ทุกวัน: ตรวจ grammar ด้วย Grammarly, แก้ไขข้อผิดพลาด, จดบันทึก</li>
+                            </ul>
+
+                            <h5>19:30-20:00 | Daily Review</h5>
+                            <ul>
+                                <li><strong>ทบทวนคำศัพท์ใน Anki (20 นาที)</strong>
+                                    <ul>
+                                        <li>คำใหม่วันนี้</li>
+                                        <li>Review คำเก่า</li>
+                                    </ul>
+                                </li>
+                                <li><strong>ฟังเสียงบันทึกของตัวเอง (10 นาที)</strong>
+                                    <ul>
+                                        <li>เปรียบเทียบกับต้นฉบับ</li>
+                                        <li>จดจุดที่ต้องปรับปรุง</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="goals">
+                        <h4>🎯 เป้าหมายสัปดาห์ที่ 1-2:</h4>
+                        <ul>
+                            <li>เข้าใจภาษาอังกฤษความเร็วช้า 70-80%</li>
+                            <li>พูดประโยคสมบูรณ์ได้</li>
+                            <li>อ่าน 10-15 หน้า/วัน</li>
+                            <li>เขียน 150-200 คำ/วัน</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="week-3-4" class="week-content">
+                    <h3>สัปดาห์ที่ 3-4: Expanding Skills</h3>
+
+                    <div class="time-block">
+                        <h4>08:00-09:00 | Intermediate Listening</h4>
+                        <div class="activity-group">
+                            <h5>ทุกวัน: Level Up</h5>
+                            <ul>
+                                <li><strong>0-20 นาที:</strong> TED Talks (หัวข้อที่สนใจ)
+                                    <ul>
+                                        <li>ฟังไม่มีซับ 1 รอบ</li>
+                                        <li>ฟังซับอังกฤษ 1 รอบ</li>
+                                        <li>Note-taking: จดประเด็นสำคัญ</li>
+                                    </ul>
+                                </li>
+                                <li><strong>20-40 นาที:</strong> Podcast Intermediate
+                                    <ul>
+                                        <li>"This American Life" หรือ "Stuff You Should Know"</li>
+                                        <li>ฟังตอนละ 20 นาที</li>
+                                        <li>หยุดสรุปทุก 5 นาที</li>
+                                    </ul>
+                                </li>
+                                <li><strong>40-60 นาที:</strong> Movie/Series Scene
+                                    <ul>
+                                        <li>ดูฉาก 5-10 นาทีจาก Netflix</li>
+                                        <li>แนะนำ: Friends, The Office, Brooklyn Nine-Nine</li>
+                                        <li>ดูไม่มีซับ → จับใจความ → ดูซับอังกฤษ → ดูอีกครั้งไม่มีซับ</li>
+                                        <li>เลือกฉากมาพูดตาม (shadow)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="time-block">
+                        <h4>09:00-10:00 | Active Speaking</h4>
+                        <div class="activity-group">
+                            <ul>
+                                <li><strong>0-15 นาที:</strong> Describe Everything
+                                    <ul>
+                                        <li>เดินไปรอบๆ บ้าน</li>
+                                        <li>บรรยายทุกอย่างที่เห็น ภาษาอังกฤษ</li>
+                                        <li>"I see a...", "There is a...", "This looks like..."</li>
+                                    </ul>
+                                </li>
+                                <li><strong>15-35 นาที:</strong> Online Tutoring
+                                    <ul>
+                                        <li>iTalki / Cambly (30 นาที)</li>
+                                        <li>กำหนดหัวข้อก่อนคุย</li>
+                                        <li>ขอให้ครูแก้การออกเสียงและไวยากรณ์</li>
+                                    </ul>
+                                </li>
+                                <li><strong>35-50 นาที:</strong> Presentation Practice
+                                    <ul>
+                                        <li>เตรียม mini-presentation 3-5 นาที</li>
+                                        <li>หัวข้อจาก: งานอดิเรก, ความฝัน, ข่าวที่สนใจ</li>
+                                        <li>นำเสนอต่อกล้อง บันทึกวิดีโอ</li>
+                                    </ul>
+                                </li>
+                                <li><strong>50-60 นาที:</strong> Review & Self-correction
+                                    <ul>
+                                        <li>ดูวิดีโอตัวเอง</li>
+                                        <li>จดข้อผิดพลาด</li>
+                                        <li>พูดใหม่อีกครั้ง (ดีขึ้น)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="time-block">
+                        <h4>14:00-15:00 | Extensive Reading</h4>
+                        <div class="activity-group">
+                            <h5>จันทร์-ศุกร์:</h5>
+                            <ul>
+                                <li>อ่าน Graded Readers Level 3-4</li>
+                                <li>หรืออ่าน Young Adult novels (Harry Potter, Percy Jackson)</li>
+                                <li>อ่าน 20-30 หน้า/วัน</li>
+                                <li>จดคำศัพท์สำคัญ 15-20 คำ</li>
+                                <li>Retell สิ่งที่อ่านด้วยคำพูดของตัวเอง</li>
+                            </ul>
+
+                            <h5>เสาร์: Magazine Day</h5>
+                            <ul>
+                                <li>อ่านนิตยสาร National Geographic, Time</li>
+                                <li>เลือกบทความสนใจ 2-3 เรื่อง</li>
+                                <li>ฝึก skimming, scanning</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="time-block">
+                        <h4>19:00-20:00 | Writing Development</h4>
+                        <div class="activity-group">
+                            <h5>19:00-19:35 | Structured Writing (35 นาที)</h5>
+                            <ul>
+                                <li><strong>จันทร์:</strong> Write a movie/book review (200 คำ)</li>
+                                <li><strong>อังคาร:</strong> Write an opinion essay (150-200 คำ)</li>
+                                <li><strong>พุธ:</strong> Write a letter to a friend (150 คำ)</li>
+                                <li><strong>พฤหัสบดี:</strong> Write about future plans (200 คำ)</li>
+                                <li><strong>ศุกร์:</strong> Write a story with given beginning (200 คำ)</li>
+                                <li><strong>เสาร์:</strong> Free writing - เขียนอะไรก็ได้ที่อยากเขียน</li>
+                            </ul>
+
+                            <h5>19:35-20:00 | Review Session (25 นาที)</h5>
+                            <ul>
+                                <li>Anki vocabulary review (15 นาที)</li>
+                                <li>ฟังเสียง/ดูวิดีโอตัวเอง (10 นาที)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="goals">
+                        <h4>🎯 เป้าหมายสัปดาห์ที่ 3-4:</h4>
+                        <ul>
+                            <li>เข้าใจ TED Talks 60-70%</li>
+                            <li>สนทนาต่อเนื่อง 10-15 นาที</li>
+                            <li>อ่านนิยายได้ 100+ หน้า</li>
+                            <li>เขียนได้คล่องขึ้น มีโครงสร้างชัดเจน</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Phase 2 Section -->
+            <section id="phase2" class="section">
+                <h2>🗓 PHASE 2: FLUENCY BUILDING (สัปดาห์ 5-8)</h2>
+
+                <div class="time-block">
+                    <h4>08:00-09:00 | Advanced Listening</h4>
+                    <div class="activity-group">
+                        <h5>ทุกวัน:</h5>
+                        <ul>
+                            <li><strong>0-25 นาที:</strong> Netflix/YouTube Series
+                                <ul>
+                                    <li>ดูไม่มีซับเลย 20-25 นาที</li>
+                                    <li>แนะนำ: Documentaries, Travel shows, Cooking shows</li>
+                                    <li>จับใจความ 70%+ ได้</li>
+                                </ul>
+                            </li>
+                            <li><strong>25-45 นาที:</strong> Podcast Native Speed
+                                <ul>
+                                    <li>"Joe Rogan Experience", "The Tim Ferriss Show"</li>
+                                    <li>ฟังโดยไม่หยุด 20 นาที</li>
+                                    <li>สรุปประเด็นสำคัญ</li>
+                                </ul>
+                            </li>
+                            <li><strong>45-60 นาที:</strong> Accent Training
+                                <ul>
+                                    <li>ฟัง American vs British vs Australian accent</li>
+                                    <li>เปรียบเทียบความแตกต่าง</li>
+                                    <li>พูดเลียนแบบแต่ละแบบ</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="time-block">
+                    <h4>09:00-10:00 | Fluency Speaking</h4>
+                    <div class="activity-group">
+                        <ul>
+                            <li><strong>0-10 นาที:</strong> Speed Speaking Drill
+                                <ul>
+                                    <li>พูดเกี่ยวกับหัวข้อง่ายๆ เร็วที่สุด 2 นาที</li>
+                                    <li>ไม่ต้องกังวลถูกผิด เน้นความคล่อง</li>
+                                    <li>ทำ 3 รอบ</li>
+                                </ul>
+                            </li>
+                            <li><strong>10-40 นาที:</strong> Extended Conversation
+                                <ul>
+                                    <li>iTalki/Cambly 30 นาที</li>
+                                    <li>เปลี่ยนครูบ้าง ลองสำเนียงต่างๆ</li>
+                                    <li>หัวข้อลึกๆ: culture, society, technology</li>
+                                </ul>
+                            </li>
+                            <li><strong>40-55 นาที:</strong> Debate Practice
+                                <ul>
+                                    <li>เลือก controversial topic</li>
+                                    <li>พูดสนับสนุน 3 นาที</li>
+                                    <li>พูดค้าน 3 นาที</li>
+                                    <li>บันทึกวิดีโอ</li>
+                                </ul>
+                            </li>
+                            <li><strong>55-60 นาที:</strong> Tongue Twisters & Pronunciation
+                                <ul>
+                                    <li>ฝึก 5-10 tongue twisters</li>
+                                    <li>ฝึกเสียงยากๆ: th, r, l, v</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="time-block">
+                    <h4>14:00-15:00 | Deep Reading</h4>
+                    <div class="activity-group">
+                        <ul>
+                            <li><strong>จันทร์/พฤหัสบดี:</strong>
+                                <ul>
+                                    <li>อ่านนิยายอังกฤษต้นฉบับ 30-40 หน้า</li>
+                                    <li>ไม่แปลทุกคำ เดาความหมายจากบริบท</li>
+                                    <li>จดแต่คำศัพท์สำคัญจริงๆ 10-15 คำ</li>
+                                </ul>
+                            </li>
+                            <li><strong>อังคาร/ศุกร์:</strong>
+                                <ul>
+                                    <li>อ่านบทความวิชาการเบาๆ (Scientific American)</li>
+                                    <li>หรือ long-form articles (The Atlantic, The New Yorker)</li>
+                                    <li>ฝึกความเข้าใจเชิงลึก</li>
+                                </ul>
+                            </li>
+                            <li><strong>พุธ/เสาร์:</strong>
+                                <ul>
+                                    <li>อ่านตามสนใจ: Reddit, Medium, Twitter threads</li>
+                                    <li>อ่าน comments ดูการใช้ภาษาจริง</li>
+                                    <li>เรียนรู้ slang, informal language</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="time-block">
+                    <h4>19:00-20:00 | Advanced Writing</h4>
+                    <div class="activity-group">
+                        <h5>19:00-19:40 | Writing Tasks</h5>
+                        <ul>
+                            <li><strong>จันทร์:</strong> Argumentative essay (250 คำ)</li>
+                            <li><strong>อังคาร:</strong> Product review (200 คำ)</li>
+                            <li><strong>พุธ:</strong> Narrative story with dialogue (300 คำ)</li>
+                            <li><strong>พฤหัสบดี:</strong> Problem-solution essay (250 คำ)</li>
+                            <li><strong>ศุกร์:</strong> Compare & contrast essay (250 คำ)</li>
+                            <li><strong>เสาร์:</strong> Blog post about learning journey (300 คำ)</li>
+                        </ul>
+
+                        <h5>19:40-20:00 | Feedback & Review</h5>
+                        <ul>
+                            <li>โพสต์งานเขียนใน Lang-8 หรือ HiNative</li>
+                            <li>รับ feedback จาก native speakers</li>
+                            <li>แก้ไขและเขียนใหม่</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="goals">
+                    <h4>🎯 เป้าหมายสัปดาห์ 5-8:</h4>
+                    <ul>
+                        <li>ดูหนัง/ซีรีส์ไม่มีซับได้สบาย</li>
+                        <li>พูดคุยได้ 30 นาทีไม่ติดขัด</li>
+                        <li>อ่านนิยายได้ 200+ หน้า/สัปดาห์</li>
+                        <li>เขียน essay ได้ดี มีข้อโต้แย้ง</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Phase 3 Section -->
+            <section id="phase3" class="section">
+                <h2>🗓 PHASE 3: MASTERY (สัปดาห์ 9-12)</h2>
+
+                <div class="time-block">
+                    <h4>08:00-09:00 | Native-Level Listening</h4>
+                    <div class="activity-group">
+                        <ul>
+                            <li><strong>0-30 นาที:</strong> Real-world Content
+                                <ul>
+                                    <li>News podcasts, interviews, debates</li>
+                                    <li>ความเร็วปกติของเจ้าของภาษา</li>
+                                    <li>จับ nuance, sarcasm, humor</li>
+                                </ul>
+                            </li>
+                            <li><strong>30-50 นาที:</strong> Multiple Accents
+                                <ul>
+                                    <li>ฟังคลิปจากหลายประเทศ</li>
+                                    <li>India, Singapore, South Africa, etc.</li>
+                                    <li>ปรับตัวให้เข้าใจทุกสำเนียง</li>
+                                </ul>
+                            </li>
+                            <li><strong>50-60 นาที:</strong> Live Content
+                                <ul>
+                                    <li>ดู YouTube Live, Twitch streams</li>
+                                    <li>ฟังคนคุยกันแบบธรรมชาติ</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="time-block">
+                    <h4>09:00-10:00 | Near-Native Speaking</h4>
+                    <div class="activity-group">
+                        <ul>
+                            <li><strong>0-15 นาที:</strong> Spontaneous Speaking
+                                <ul>
+                                    <li>พูดตามความคิดไหลเรื่อยๆ 10 นาที</li>
+                                    <li>ไม่เตรียม ไม่คิดก่อน</li>
+                                    <li>บันทึกวิดีโอ</li>
+                                </ul>
+                            </li>
+                            <li><strong>15-45 นาที:</strong> Professional Conversation
+                                <ul>
+                                    <li>iTalki/Cambly with professional teachers</li>
+                                    <li>ขอ feedback ในระดับละเอียด</li>
+                                    <li>หัวข้อ: business, career, current affairs</li>
+                                </ul>
+                            </li>
+                            <li><strong>45-60 นาที:</strong> Public Speaking Practice
+                                <ul>
+                                    <li>เตรียม TED-style talk 5 นาที</li>
+                                    <li>นำเสนอต่อกล้อง</li>
+                                    <li>ดูตัวเอง แก้ไข นำเสนอใหม่</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="time-block">
+                    <h4>14:00-15:00 | Professional Reading</h4>
+                    <div class="activity-group">
+                        <ul>
+                            <li>อ่านเนื้อหาระดับสูง:
+                                <ul>
+                                    <li>Academic journals</li>
+                                    <li>Business reports</li>
+                                    <li>Literature classics</li>
+                                </ul>
+                            </li>
+                            <li>วิเคราะห์ writing style</li>
+                            <li>เรียนรู้โครงสร้างประโยคซับซ้อน</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="time-block">
+                    <h4>19:00-20:00 | Creative Writing & Mastery</h4>
+                    <div class="activity-group">
+                        <h5>19:00-19:45 | Advanced Writing</h5>
+                        <ul>
+                            <li>เขียนงานยาวๆ: short stories, essays, articles</li>
+                            <li>ส่งไปตีพิมพ์ใน Medium/personal blog</li>
+                            <li>ขอ feedback จากชุมชน</li>
+                        </ul>
+
+                        <h5>19:45-20:00 | Final Review</h5>
+                        <ul>
+                            <li>ทบทวนความก้าวหน้า</li>
+                            <li>วางแผนการเรียนต่อ</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="goals">
+                    <h4>🎯 เป้าหมายสัปดาห์ 9-12:</h4>
+                    <ul>
+                        <li>คิดเป็นภาษาอังกฤษได้โดยอัตโนมัติ</li>
+                        <li>สนทนาได้เหมือนคนพื้นเมือง</li>
+                        <li>อ่านอะไรก็ได้โดยไม่ติดขัด</li>
+                        <li>เขียนได้ในระดับ publication</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Progress Tracker Section -->
+            <section id="tracker" class="section">
+                <h2>📊 ตารางติดตามความก้าวหน้า</h2>
+
+                <div class="tracker-container">
+                    <table class="progress-table">
+                        <thead>
+                            <tr>
+                                <th>สัปดาห์</th>
+                                <th>Listening Goal</th>
+                                <th>Speaking Goal</th>
+                                <th>Reading Goal</th>
+                                <th>Writing Goal</th>
+                                <th>คะแนนประเมิน (1-10)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Week 1</td>
+                                <td>เข้าใจภาษาช้า 70%</td>
+                                <td>พูดประโยคสมบูรณ์</td>
+                                <td>อ่าน 10 หน้า/วัน</td>
+                                <td>เขียน 150 คำ/วัน</td>
+                                <td><input type="number" min="1" max="10" class="score-input" data-week="1"></td>
+                            </tr>
+                            <tr>
+                                <td>Week 2</td>
+                                <td>เข้าใจภาษาช้า 80%</td>
+                                <td>พูด 5 นาทีต่อเนื่อง</td>
+                                <td>อ่าน 15 หน้า/วัน</td>
+                                <td>เขียน 200 คำ/วัน</td>
+                                <td><input type="number" min="1" max="10" class="score-input" data-week="2"></td>
+                            </tr>
+                            <tr>
+                                <td>Week 3</td>
+                                <td>เข้าใจ TED 50%</td>
+                                <td>พูด 10 นาทีต่อเนื่อง</td>
+                                <td>อ่าน 20 หน้า/วัน</td>
+                                <td>เขียน 200 คำ/วัน</td>
+                                <td><input type="number" min="1" max="10" class="score-input" data-week="3"></td>
+                            </tr>
+                            <tr>
+                                <td>Week 4</td>
+                                <td>เข้าใจ TED 60%</td>
+                                <td>คุยเจ้าของภาษา 15 นาที</td>
+                                <td>อ่าน 25 หน้า/วัน</td>
+                                <td>Essay 250 คำ</td>
+                                <td><input type="number" min="1" max="10" class="score-input" data-week="4"></td>
+                            </tr>
+                            <tr>
+                                <td>Week 5</td>
+                                <td>ฟังพอดแคสต์ 60%</td>
+                                <td>พูดต่อเนื่อง 15 นาที</td>
+                                <td>อ่าน 30 หน้า/วัน</td>
+                                <td>เขียน 250 คำ/วัน</td>
+                                <td><input type="number" min="1" max="10" class="score-input" data-week="5"></td>
+                            </tr>
+                            <tr>
+                                <td>Week 6</td>
+                                <td>ซีรีส์ซับอังกฤษ 70%</td>
+                                <td>พูด 20 นาทีไม่หยุด</td>
+                                <td>อ่าน 35 หน้า/วัน</td>
+                                <td>เขียน 300 คำ/วัน</td>
+                                <td><input type="number" min="1" max="10" class="score-input" data-week="6"></td>
+                            </tr>
+                            <tr>
+                                <td>Week 7</td>
+                                <td>ฟังพอดแคสต์ 70%</td>
+                                <td>สนทนา 25 นาที</td>
+                                <td>อ่าน 40 หน้า/วัน</td>
+                                <td>Essay ครบโครงสร้าง</td>
+                                <td><input type="number" min="1" max="10" class="score-input" data-week="7"></td>
+                            </tr>
+                            <tr>
+                                <td>Week 8</td>
+                                <td>หนังไม่มีซับ 60%</td>
+                                <td>สนทนา 30 นาที</td>
+                                <td>อ่านอะไรก็ได้สบาย</td>
+                                <td>เขียนได้หลายรูปแบบ</td>
+                                <td><input type="number" min="1" max="10" class="score-input" data-week="8"></td>
+                            </tr>
+                            <tr>
+                                <td>Week 9</td>
+                                <td>เจ้าของภาษา 75%</td>
+                                <td>คิดเป็นอังกฤษบ้าง</td>
+                                <td>อ่านวิชาการได้</td>
+                                <td>เขียนเชิงวิชาการ</td>
+                                <td><input type="number" min="1" max="10" class="score-input" data-week="9"></td>
+                            </tr>
+                            <tr>
+                                <td>Week 10</td>
+                                <td>หลายสำเนียง 70%</td>
+                                <td>พูดมีไหวพริบ</td>
+                                <td>อ่านวรรณกรรม</td>
+                                <td>เขียนสร้างสรรค์</td>
+                                <td><input type="number" min="1" max="10" class="score-input" data-week="10"></td>
+                            </tr>
+                            <tr>
+                                <td>Week 11</td>
+                                <td>เจ้าของภาษา 80%</td>
+                                <td>พูดได้เกือบเนทีฟ</td>
+                                <td>อ่านอะไรก็ได้คล่อง</td>
+                                <td>เขียนระดับสูง</td>
+                                <td><input type="number" min="1" max="10" class="score-input" data-week="11"></td>
+                            </tr>
+                            <tr>
+                                <td>Week 12</td>
+                                <td>เจ้าของภาษา 85%+</td>
+                                <td>พูดได้คล่องมั่นใจ</td>
+                                <td>เชี่ยวชาญการอ่าน</td>
+                                <td>เขียนระดับตีพิมพ์</td>
+                                <td><input type="number" min="1" max="10" class="score-input" data-week="12"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <button class="save-btn" onclick="saveProgress()">บันทึกความก้าวหน้า</button>
+                </div>
+
+                <div class="monthly-goals">
+                    <h3>📊 เป้าหมายแต่ละเดือน</h3>
+                    <table class="goals-table">
+                        <thead>
+                            <tr>
+                                <th>เดือน</th>
+                                <th>Listening</th>
+                                <th>Speaking</th>
+                                <th>Reading</th>
+                                <th>Writing</th>
+                                <th>Vocabulary</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>เดือน 1</td>
+                                <td>เข้าใจ 70-80%<br>(ความเร็วปกติ)</td>
+                                <td>พูดประโยคสมบูรณ์<br>แม้จะช้า</td>
+                                <td>อ่าน 300-400 หน้า</td>
+                                <td>เขียน 150-200 คำ/วัน</td>
+                                <td>800-1,000 คำ</td>
+                            </tr>
+                            <tr>
+                                <td>เดือน 2</td>
+                                <td>ติดตามซีรีส์/<br>พอดแคสต์ได้</td>
+                                <td>สนทนา 15-20 นาที<br>ต่อเนื่อง</td>
+                                <td>อ่าน 500-700 หน้า</td>
+                                <td>เขียน 250 คำ/<br>essay ได้</td>
+                                <td>1,500-2,000 คำ</td>
+                            </tr>
+                            <tr>
+                                <td>เดือน 3</td>
+                                <td>เข้าใจสำเนียงต่างๆ<br>US, UK, AUS</td>
+                                <td>แสดงความคิดเห็น<br>ซับซ้อนได้คล่อง</td>
+                                <td>อ่าน 800-1,000 หน้า</td>
+                                <td>เขียนระดับ<br>ตีพิมพ์ได้</td>
+                                <td>3,000-4,000 คำ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Resources Section -->
+            <section id="resources" class="section">
+                <h2>🎁 แหล่งข้อมูลแนะนำ</h2>
+
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <h3>🎧 Listening</h3>
+                        <ul>
+                            <li>BBC Learning English</li>
+                            <li>TED Talks</li>
+                            <li>Podcasts (Spotify)</li>
+                            <li>Netflix, YouTube, Disney+</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>🗣 Speaking</h3>
+                        <ul>
+                            <li>iTalki</li>
+                            <li>Cambly</li>
+                            <li>HelloTalk</li>
+                            <li>ELSA Speak</li>
+                            <li>Speechling</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>📖 Reading</h3>
+                        <ul>
+                            <li>Project Gutenberg (หนังสือฟรี)</li>
+                            <li>Medium</li>
+                            <li>BBC News</li>
+                            <li>The Guardian</li>
+                            <li>Graded Readers (Oxford, Cambridge)</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>✍️ Writing</h3>
+                        <ul>
+                            <li>Grammarly</li>
+                            <li>Lang-8</li>
+                            <li>HiNative</li>
+                            <li>Daily journal apps</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>📚 Vocabulary</h3>
+                        <ul>
+                            <li>Anki</li>
+                            <li>Quizlet</li>
+                            <li>Memrise</li>
+                            <li>Cambridge Dictionary app</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>💡 เคล็ดลับความสำเร็จ</h3>
+                        <h4>Do's ✅</h4>
+                        <ul>
+                            <li>บันทึกทุกอย่าง (เสียง, วิดีโอ, คำศัพท์)</li>
+                            <li>เปลี่ยน settings อุปกรณ์เป็นภาษาอังกฤษ</li>
+                            <li>คิดในหัวเป็นภาษาอังกฤษตลอดเวลา</li>
+                            <li>พูดกับตัวเอง narrate ชีวิตประจำวัน</li>
+                            <li>หาเพื่อนฝึกพูดด้วย (online/offline)</li>
+                        </ul>
+
+                        <h4>Don'ts ❌</h4>
+                        <ul>
+                            <li>ไม่แปลทุกคำ ให้เดาจากบริบท</li>
+                            <li>ไม่ฝึกแค่ทักษะเดียว ต้องครบทั้ง 4</li>
+                            <li>ไม่ข้ามการทบทวน (review สำคัญมาก!)</li>
+                            <li>ไม่เปรียบเทียบตัวเองกับคนอื่น</li>
+                            <li>ไม่ยอมแพ้เมื่อยาก</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="final-goals">
+                    <h3>🏆 สิ่งที่คาดหวังหลัง 12 สัปดาห์</h3>
+                    <ul class="final-goals-list">
+                        <li>✅ เข้าใจการฟังภาษาอังกฤษ 80-90%</li>
+                        <li>✅ พูดได้คล่องแคล่วและมั่นใจ</li>
+                        <li>✅ อ่านหนังสือ/บทความได้สบาย</li>
+                        <li>✅ เขียนได้ชัดเจนและมีโครงสร้าง</li>
+                        <li>✅ คำศัพท์ 3,000-4,000 คำ (ใช้ได้จริง)</li>
+                        <li>✅ คิดเป็นภาษาอังกฤษได้เป็นส่วนหนึ่ง</li>
+                        <li>✅ IELTS Band 6.0-7.0 (ถ้าไปสอบ)</li>
+                    </ul>
+                    <p class="important-note">
+                        <strong>สำคัญที่สุด:</strong> มีความมั่นใจในการใช้ภาษาอังกฤษในชีวิตจริง! 🌟
+                    </p>
+                    <p class="footnote">
+                        หมายเหตุ: ตารางนี้ยืดหยุ่นได้ ปรับให้เหมาะกับตัวคุณ ความสม่ำเสมอสำคัญกว่าความสมบูรณ์แบบ! 💪
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

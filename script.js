@@ -452,6 +452,31 @@ function toggleDarkMode() {
 }
 
 // ========================================
+// Make Tables Responsive
+// ========================================
+function makeTablesResponsive() {
+    const tables = document.querySelectorAll('.schedule-table, .progress-table, .goals-table');
+    tables.forEach(table => {
+        // Check if table is not already wrapped
+        if (!table.parentElement.classList.contains('table-wrapper')) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'table-wrapper';
+            table.parentNode.insertBefore(wrapper, table);
+            wrapper.appendChild(table);
+
+            // Hide scroll indicator after first scroll
+            let hasScrolled = false;
+            wrapper.addEventListener('scroll', () => {
+                if (!hasScrolled) {
+                    hasScrolled = true;
+                    wrapper.style.setProperty('--scroll-indicator-opacity', '0');
+                }
+            });
+        }
+    });
+}
+
+// ========================================
 // Initialize Everything
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -463,6 +488,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initKeyboardShortcuts();
     initPrintPrep();
     initDarkMode();
+    makeTablesResponsive();
 
     // Show welcome message on first visit
     if (!localStorage.getItem('hasVisited')) {
